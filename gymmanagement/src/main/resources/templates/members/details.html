@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Member Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/gym-theme.css}">
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar :: body}"></div>
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold mb-0">Member Profile</h2>
+        <a th:href="@{/members}" class="btn btn-outline-dark btn-sm">Back to Members</a>
+    </div>
+
+    <div class="gym-surface p-4">
+        <div class="text-center mb-3">
+
+            <img th:if="${member.photo != null}"
+                 th:src="@{'/uploads/' + ${member.photo}}"
+                 width="180"
+                 class="rounded">
+
+        </div>
+
+        <p><b>Name:</b>
+            <span th:text="${member.firstName + ' ' + member.lastName}"></span>
+        </p>
+
+        <p><b>Email:</b> <span th:text="${member.email}"></span></p>
+
+        <p><b>Phone:</b> <span th:text="${member.phone}"></span></p>
+
+        <p><b>Age:</b> <span th:text="${member.age}"></span></p>
+
+        <p><b>Registration Date:</b> <span th:text="${member.registrationDate}"></span></p>
+
+        <hr>
+
+        <p><b>Plan:</b>
+            <span th:text="${member.membershipPlan != null ? member.membershipPlan.name : 'None'}"></span>
+        </p>
+
+        <hr>
+
+        <h5>Classes</h5>
+
+        <ul>
+            <li th:each="c : ${member.classes}"
+                th:text="${c.name}">
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark gym-navbar px-4 py-2">
+    <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
+        <span class="gym-brand-badge">GM</span>
+        <span>IronPulse Gym</span>
+    </a>
+
+    <div class="navbar-nav ms-auto gap-1">
+        <a class="nav-link" th:href="@{/}">Dashboard</a>
+        <a class="nav-link" th:href="@{/members}">Members</a>
+        <a class="nav-link" th:href="@{/plans}">Plans</a>
+        <a class="nav-link" th:href="@{/trainers}">Trainers</a>
+        <a class="nav-link" th:href="@{/classes}">Classes</a>
+    </div>
+</nav>
+
+</body>
+</html>

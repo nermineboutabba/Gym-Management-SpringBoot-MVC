@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Member Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/gym-theme.css}">
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar :: body}"></div>
+
+<div class="container py-4">
+
+    <h2 class="fw-bold mb-3">Member Form</h2>
+
+    <div class="gym-surface p-4">
+
+    <form th:action="@{/members/save}"
+          th:object="${member}"
+          method="post"
+          enctype="multipart/form-data">
+
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{photo}">
+
+        <!-- FIRST NAME -->
+        <div class="mb-3">
+            <label>First Name</label>
+
+            <input type="text"
+                   th:field="*{firstName}"
+                   class="form-control">
+        </div>
+
+        <!-- LAST NAME -->
+        <div class="mb-3">
+            <label>Last Name</label>
+
+            <input type="text"
+                   th:field="*{lastName}"
+                   class="form-control">
+        </div>
+
+        <!-- EMAIL -->
+        <div class="mb-3">
+            <label>Email</label>
+
+            <input type="email"
+                   th:field="*{email}"
+                   class="form-control">
+        </div>
+
+        <!-- PHONE -->
+        <div class="mb-3">
+            <label>Phone</label>
+
+            <input type="text"
+                   th:field="*{phone}"
+                   class="form-control">
+        </div>
+
+        <!-- AGE -->
+        <div class="mb-3">
+            <label>Age</label>
+
+            <input type="number"
+                   th:field="*{age}"
+                   class="form-control">
+        </div>
+
+        <!-- PHOTO -->
+        <div class="mb-3">
+
+            <label>Profile Photo</label>
+
+            <input type="file"
+                   name="imageFile"
+                   class="form-control">
+
+        </div>
+
+        <!-- CURRENT PHOTO -->
+        <div class="mb-3"
+             th:if="${member.photo != null}">
+
+            <img th:src="@{'/uploads/' + ${member.photo}}"
+                 width="120"
+                 class="rounded">
+
+        </div>
+
+        <!-- PLAN -->
+        <div class="mb-3">
+
+            <label>Membership Plan</label>
+
+            <select th:field="*{membershipPlan}"
+                    class="form-control">
+
+                <option th:each="p : ${plans}"
+                        th:value="${p.id}"
+                        th:text="${p.name}">
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- CLASSES -->
+        <div class="mb-3">
+
+            <label><b>Classes</b></label>
+
+            <div class="form-check"
+                 th:each="c : ${classes}">
+
+                <input class="form-check-input"
+                       type="checkbox"
+                       th:field="*{classes}"
+                       th:value="${c.id}">
+
+                <label class="form-check-label"
+                       th:text="${c.name}">
+                </label>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-ember">
+            Save Member
+        </button>
+
+    </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

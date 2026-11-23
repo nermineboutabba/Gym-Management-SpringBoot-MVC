@@ -1,0 +1,125 @@
+body {
+  background-color: #f4f4f5;
+  color: #18181b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.gym-navbar {
+  background: linear-gradient(90deg, #18181b 0%, #27272a 100%);
+  border-bottom: 2px solid #ea580c;
+}
+
+.gym-navbar .navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff !important;
+}
+
+.gym-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #ea580c;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-right: 0.6rem;
+}
+
+.gym-navbar .nav-link {
+  color: #d4d4d8 !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.45rem 0.9rem !important;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.gym-navbar .nav-link:hover {
+  background-color: rgba(234, 88, 12, 0.16);
+  color: #ffffff !important;
+}
+
+.gym-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-top: 4px solid #ea580c;
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 6px 18px -8px rgba(24, 24, 27, 0.12);
+}
+
+.gym-kpi-card.dark {
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+  border-color: #3f3f46;
+  border-top-color: #fb923c;
+  color: #ffffff;
+}
+
+.gym-kpi-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71717a;
+}
+
+.gym-kpi-card.dark .gym-kpi-label {
+  color: #a1a1aa;
+}
+
+.gym-kpi-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.gym-surface {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px -12px rgba(24, 24, 27, 0.1);
+}
+
+.gym-table thead th {
+  background-color: #18181b;
+  color: #fafafa;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  padding: 0.85rem 1rem;
+}
+
+.gym-table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+}
+
+.btn-ember {
+  background-color: #ea580c;
+  border-color: #ea580c;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.btn-ember:hover {
+  background-color: #c2410c;
+  border-color: #c2410c;
+  color: #ffffff;
+}
+
+.progress-ember {
+  height: 10px;
+  border-radius: 999px;
+  background-color: #f4f4f5;
+}
+
+.progress-ember .progress-bar {
+  background: linear-gradient(90deg, #ea580c, #f97316);
+  border-radius: 999px;
+}
